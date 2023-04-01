@@ -50,7 +50,7 @@ if nargin == 7
                 w4 = power(abs(S-E)-LC(i1, j1), 2);
                 w5 = power(abs(N-S)-LC(i1, j1), 2);
                 w6 = power(abs(W-E)-LC(i1, j1), 2);
-                W_LC=power(sum([w1 w2 w3 w4 w5 w6])/6, 1/2);%+LC(i1-1,j1-1)+LC(i1-1,j1+1)+LC(i1+1,j1-1)+LC(i1+1,j1+1);
+                W_LC=sum([w1 w2 w3 w4 w5 w6])/6;%+LC(i1-1,j1-1)+LC(i1-1,j1+1)+LC(i1+1,j1-1)+LC(i1+1,j1+1);
                 if DM(i1, j1)-DE(i1, j1)>threshold
                     pixel_profile(counter, :) = [W_LC P(i1, j1) ref_P(i1, j1) DH(i1, j1) DV(i1, j1) DD(i1, j1) DAD(i1, j1) N W S E NW NE i1 j1 DM(i1, j1) DE(i1, j1) (j1-1)*n+i1];
                 else
